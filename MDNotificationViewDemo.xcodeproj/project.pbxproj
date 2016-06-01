@@ -17,6 +17,7 @@
 		8E74ED171CFEC8F1008A528E /* MDNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E74ED161CFEC8F1008A528E /* MDNotificationView.swift */; };
 		8E74ED181CFEC8F1008A528E /* MDNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E74ED161CFEC8F1008A528E /* MDNotificationView.swift */; };
 		8E74ED191CFEC8F1008A528E /* MDNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E74ED161CFEC8F1008A528E /* MDNotificationView.swift */; };
+		8E74ED1B1CFECB08008A528E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E74ED1A1CFECB08008A528E /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8E74ED071CFEC88C008A528E /* MDNotificationViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDNotificationViewDemoUITests.swift; sourceTree = "<group>"; };
 		8E74ED091CFEC88C008A528E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E74ED161CFEC8F1008A528E /* MDNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MDNotificationView.swift; path = MDNotificationView/MDNotificationView.swift; sourceTree = "<group>"; };
+		8E74ED1A1CFECB08008A528E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E74ED1B1CFECB08008A528E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				8E74ECE61CFEC88C008A528E /* MDNotificationViewDemo */,
 				8E74ECFB1CFEC88C008A528E /* MDNotificationViewDemoTests */,
 				8E74ED061CFEC88C008A528E /* MDNotificationViewDemoUITests */,
+				8E74ED1C1CFECB12008A528E /* Frameworks */,
 				8E74ECE51CFEC88C008A528E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,6 +140,14 @@
 				8E74ED161CFEC8F1008A528E /* MDNotificationView.swift */,
 			);
 			name = MDNotificationView;
+			sourceTree = "<group>";
+		};
+		8E74ED1C1CFECB12008A528E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E74ED1A1CFECB08008A528E /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

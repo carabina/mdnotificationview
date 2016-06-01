@@ -55,8 +55,6 @@ Pod::Spec.new do |s|
   #
 
   s.author             = "Moritz Dietsche"
-  # s.authors            = { "Moritz Dietsche" => "moritz.dietsche@haako.io" }
-  # s.social_media_url   = "http://twitter.com/Moritz Dietsche"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -81,7 +79,7 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { :git => "https://github.com/moritzdietsche/mdnotificationview.git", :tag => "#{s.version}" }
-
+  s.source_files = 'MDNotificationView.swift'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -117,7 +115,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
