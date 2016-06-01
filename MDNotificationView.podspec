@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { :git => "https://github.com/moritzdietsche/mdnotificationview.git", :tag => "#{s.version}" }
-  s.source_files = 'MDNotificationView/MDNotificationView.swift'
+  s.source_files = 'MDNotificationView.swift'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
