@@ -7,18 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: UIViewController, MDNotificationViewDelegate {
+    
+    @IBAction func showButtonTapped(sender: AnyObject) {
+        
+        let notificationView = MDNotificationView(view: self.view, size: .Expanded)
+        notificationView.backgroundColor = UIColor.redColor()
+        notificationView.show()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showBottomButtonTapped(sender: AnyObject) {
+
+        let notificationView = MDNotificationView(view: self.view, size: .Compact, position: .Bottom)
+        notificationView.backgroundColor = UIColor.blueColor()
+        notificationView.show()
+
     }
-
-
+    
 }
-
