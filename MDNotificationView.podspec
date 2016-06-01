@@ -79,7 +79,6 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { :git => "https://github.com/moritzdietsche/mdnotificationview.git", :tag => "#{s.version}" }
-  s.source_files = 'MDNotificationView.swift'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -89,11 +88,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
+  s.source_files = 'MDNotificationView/**/*.{swift}'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
