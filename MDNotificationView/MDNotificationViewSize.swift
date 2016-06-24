@@ -8,7 +8,7 @@ import UIKit
 
 enum MDNotificationViewSize: CGFloat {
     
-    case Compact = 50
-    case Expanded = 100
+    case compact = 50
+    case expanded = 100
     
 }

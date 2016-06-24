@@ -9,18 +9,18 @@ import UIKit
 
 class ViewController: UIViewController, MDNotificationViewDelegate {
     
-    @IBAction func showButtonTapped(sender: AnyObject) {
+    @IBAction func showButtonTapped(_ sender: AnyObject) {
         
-        let notificationView = MDNotificationView(view: self.view, size: .Expanded)
-        notificationView.backgroundColor = UIColor.redColor()
+        let notificationView = MDNotificationView(view: self.view, size: .expanded)
+        notificationView.backgroundColor = UIColor.red()
         notificationView.show()
         
     }
 
-    @IBAction func showBottomButtonTapped(sender: AnyObject) {
+    @IBAction func showBottomButtonTapped(_ sender: AnyObject) {
 
-        let notificationView = MDNotificationView(view: self.view, size: .Compact, position: .Bottom)
-        notificationView.backgroundColor = UIColor.blueColor()
+        let notificationView = MDNotificationView(view: self.view, size: .compact, position: .bottom)
+        notificationView.backgroundColor = UIColor.blue()
         notificationView.show()
 
     }

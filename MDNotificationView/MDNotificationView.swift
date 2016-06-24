@@ -22,7 +22,7 @@ class MDNotificationView: UIView {
         self.size = size
         self.position = position
         
-        var frame = CGRectZero
+        var frame = CGRect.zero
         
         guard let window = view.window else {
             fatalError()
@@ -31,10 +31,10 @@ class MDNotificationView: UIView {
         self.parentWindow = window
         
         switch position {
-        case .Top:
-            frame = CGRectMake(window.frame.origin.x, window.frame.origin.y - size.rawValue, window.frame.width, size.rawValue)
-        case .Bottom:
-            frame = CGRectMake(window.frame.origin.x, window.frame.height, window.frame.width, size.rawValue)
+        case .top:
+            frame = CGRect(x: window.frame.origin.x, y: window.frame.origin.y - size.rawValue, width: window.frame.width, height: size.rawValue)
+        case .bottom:
+            frame = CGRect(x: window.frame.origin.x, y: window.frame.height, width: window.frame.width, height: size.rawValue)
         }
         
         super.init(frame: frame)
@@ -44,11 +44,11 @@ class MDNotificationView: UIView {
     }
     
     convenience init(view: UIView) {
-        self.init(view: view, size: .Compact, position: .Top)
+        self.init(view: view, size: .compact, position: .top)
     }
     
     convenience init(view: UIView, size: MDNotificationViewSize) {
-        self.init(view: view, size: size, position: .Top)
+        self.init(view: view, size: size, position: .top)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,12 +58,12 @@ class MDNotificationView: UIView {
     func show() {
         self.parentWindow.addSubview(self)
 
-        UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             switch self.position {
-            case .Top:
-                self.frame = CGRectMake(self.parentWindow.frame.origin.x, self.parentWindow.frame.origin.y, self.parentWindow.frame.width, self.size.rawValue)
-            case .Bottom:
-                self.frame = CGRectMake(self.parentWindow.frame.origin.x, self.parentWindow.frame.height - self.size.rawValue, self.parentWindow.frame.width, self.size.rawValue)
+            case .top:
+                self.frame = CGRect(x: self.parentWindow.frame.origin.x, y: self.parentWindow.frame.origin.y, width: self.parentWindow.frame.width, height: self.size.rawValue)
+            case .bottom:
+                self.frame = CGRect(x: self.parentWindow.frame.origin.x, y: self.parentWindow.frame.height - self.size.rawValue, width: self.parentWindow.frame.width, height: self.size.rawValue)
             }
             }, completion: { (completed) in
                 if completed {
@@ -73,12 +73,12 @@ class MDNotificationView: UIView {
     }
     
     func hide() {
-        UIView.animateWithDuration(0.1, delay: 0, options: .CurveEaseIn, animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
             switch self.position {
-            case .Top:
-                self.frame = CGRectMake(self.parentWindow.frame.origin.x, self.parentWindow.frame.origin.y - self.size.rawValue, self.parentWindow.frame.width, self.size.rawValue)
-            case .Bottom:
-                self.frame = CGRectMake(self.parentWindow.frame.origin.x, self.parentWindow.frame.height, self.parentWindow.frame.width, self.size.rawValue)
+            case .top:
+                self.frame = CGRect(x: self.parentWindow.frame.origin.x, y: self.parentWindow.frame.origin.y - self.size.rawValue, width: self.parentWindow.frame.width, height: self.size.rawValue)
+            case .bottom:
+                self.frame = CGRect(x: self.parentWindow.frame.origin.x, y: self.parentWindow.frame.height, width: self.parentWindow.frame.width, height: self.size.rawValue)
             }
             }, completion: { (completed) in
                 if completed {
@@ -87,14 +87,14 @@ class MDNotificationView: UIView {
         })
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.lastLocationY = frame.origin.y
         self.translationY = 0
     }
     
-    func handlePan(sender: UIPanGestureRecognizer) {
+    func handlePan(_ sender: UIPanGestureRecognizer) {
         if let superview = self.superview {
-            if .Ended == sender.state {
+            if .ended == sender.state {
                 if 0 < abs(self.translationY) {
                     self.hide()
                 }
@@ -103,15 +103,15 @@ class MDNotificationView: UIView {
                 }
             }
             else {
-                self.translationY = sender.translationInView(superview).y
+                self.translationY = sender.translation(in: superview).y
                 
                 switch self.position {
-                case .Top:
+                case .top:
                     let newY = min(self.lastLocationY + translationY, 0)
-                    self.frame = CGRectMake(self.frame.origin.x, newY, self.frame.width, self.size.rawValue)
-                case .Bottom:
+                    self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.size.rawValue)
+                case .bottom:
                     let newY = max(self.lastLocationY + translationY, self.parentWindow.frame.height - self.size.rawValue)
-                    self.frame = CGRectMake(self.frame.origin.x, newY, self.frame.width, self.size.rawValue)
+                    self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.size.rawValue)
                 }
             }
         }

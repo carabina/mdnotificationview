@@ -8,7 +8,7 @@ import Foundation
 
 enum MDNotificationViewPosition {
     
-    case Top
-    case Bottom
+    case top
+    case bottom
     
 }
