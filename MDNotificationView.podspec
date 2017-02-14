@@ -24,7 +24,7 @@ MDNotificationView provides customizable views that slide in from the top or the
   s.homepage         = 'https://github.com/moritzdietsche/mdnotificationview'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Moritz Dietsche' }
+  s.author           = 'Moritz Dietsche'
   s.source           = { :git => 'https://github.com/moritzdietsche/mdnotificationview.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
