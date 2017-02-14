@@ -25,6 +25,9 @@
 
 import UIKit
 
+/// Notification views can contain predefined layout views or custom views. They
+/// are presented from the top or the bottom of the screen, overlapping the rest
+/// of the app.
 public class MDNotificationView: UIView {
     
     private var lastLocationY: CGFloat = 0
@@ -46,7 +49,7 @@ public class MDNotificationView: UIView {
         if let keyWindow = UIApplication.shared.keyWindow {
             switch position {
             case .top:
-                frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y - view.frame.height, width: keyWindow.frame.width, height: view.frame.height + UIApplication.shared.statusBarFrame.height)
+                frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y - view.frame.height - UIApplication.shared.statusBarFrame.height, width: keyWindow.frame.width, height: view.frame.height + UIApplication.shared.statusBarFrame.height)
             case .bottom:
                 frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.height, width: keyWindow.frame.width, height: view.frame.height)
             }

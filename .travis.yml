@@ -11,8 +11,8 @@ before_install:
 - pod install --project-directory=Example
 script:
 # don't use xcpretty until compatibility with codecov is restored
-#- set -o pipefail && xcodebuild test -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationView-Example -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=NO -destination 'OS=10.0,name=iPhone SE' | xcpretty
-- set -o pipefail && xcodebuild test -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationView-Example -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE'
+#- set -o pipefail && xcodebuild test -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=NO -destination 'OS=10.0,name=iPhone SE' | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE'
 - pod lib lint
 after_success:
 - bash <(curl -s https://codecov.io/bash) -J "MDNotificationView_Example"

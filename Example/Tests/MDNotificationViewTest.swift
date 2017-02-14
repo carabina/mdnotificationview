@@ -1,0 +1,45 @@
+//
+//  MDNotificationTest.swift
+//  MDNotificationView
+//
+//  Created by Moritz Dietsche on 14.02.17.
+//  Copyright © 2017 CocoaPods. All rights reserved.
+//
+
+import XCTest
+@testable import MDNotificationView
+
+class MDNotificationViewTest: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testConvencienceInitOptionalPosition() {
+        let notificationView = MDNotificationView(view: UIView())
+        
+        XCTAssertEqual(notificationView.frame.origin.y
+            + notificationView.frame.size.height, 0)
+    }
+
+    func testConvencienceInitTopPosition() {
+        let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)))
+        
+        XCTAssertEqual(notificationView.frame.origin.y
+            + notificationView.frame.size.height, 0)
+        XCTAssertEqual(notificationView.frame.origin.x, 0)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+
+        let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)))
+        
+        XCTAssertEqual(notificationView2.frame.origin.y
+            + notificationView2.frame.size.height, 0)
+}
+    
+}
