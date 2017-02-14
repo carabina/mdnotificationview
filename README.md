@@ -1,6 +1,6 @@
 # MDNotificationView
 
-[![CI Status](http://img.shields.io/travis/Moritz Dietsche/MDNotificationView.svg?style=flat)](https://travis-ci.org/Moritz Dietsche/MDNotificationView)
+[![CI Status](http://img.shields.io/travis/moritzdietsche/mdnotificationview.svg?style=flat)](https://travis-ci.org/moritzdietsche/mdnotificationview)
 [![Version](https://img.shields.io/cocoapods/v/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![License](https://img.shields.io/cocoapods/l/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![Platform](https://img.shields.io/cocoapods/p/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
