@@ -3,3 +3,4 @@ Example/build/*
 Example/docs/*
 Example/Pods/*
 Example/Podfile.lock
+_Pods.xcodeproj
