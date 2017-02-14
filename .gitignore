@@ -1,5 +1,5 @@
 *.xcodeproj/xcuserdata/*
-MDNotificationView/Example/build/*
-MDNotificationView/Example/docs/*
-MDNotificationView/Example/Pods/*
-MDNotificationView/Example/Podfile.lock
+Example/build/*
+Example/docs/*
+Example/Pods/*
+Example/Podfile.lock
