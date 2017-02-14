@@ -1,5 +1,5 @@
-*.xcworkspace/xcuserdata/*
-*.xcodeproj/xcuserdata/*
+Example/MDNotificationView.xcworkspace/xcuserdata/*
+Example/MDNotificationView.xcodeproj/xcuserdata/*
 Example/build/*
 Example/docs/*
 Example/Pods/*
