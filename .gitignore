@@ -1,3 +1,4 @@
+MDNotificationView/MDNotificationView.xcodeproj/xcuserdata/*
 Example/MDNotificationView.xcworkspace/xcuserdata/*
 Example/MDNotificationView.xcodeproj/xcuserdata/*
 Example/build/*
@@ -5,3 +6,4 @@ Example/docs/*
 Example/Pods/*
 Example/Podfile.lock
 _Pods.xcodeproj
+
