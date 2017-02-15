@@ -1,11 +1,12 @@
-MDNotificationView/MDNotificationView.xcodeproj/xcuserdata/*
-Example/MDNotificationView.xcworkspace/xcuserdata/*
-Example/MDNotificationView.xcodeproj/xcuserdata/*
-Example/build/*
+*/build
+*/docs
+*/Pods
+*/Podfile.lock
+
+MDNotificationView.xcodeproj/xcuserdata/*
+Example/MDNotificationViewExample.xcworkspace/xcuserdata/*
+Example/MDNotificationViewExample.xcodeproj/xcuserdata/*
 Example/docs/*
-Example/Pods/*
-Example/Podfile.lock
 Carthage/*
-_Pods.xcodeproj
 
 
