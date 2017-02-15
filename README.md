@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![License](https://img.shields.io/cocoapods/l/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![Platform](https://img.shields.io/cocoapods/p/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Example
 
