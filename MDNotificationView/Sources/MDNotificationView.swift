@@ -50,7 +50,10 @@ public class MDNotificationView: UIView {
     /// The delegate is being notified when the notification has been shown, hidden or tapped.
     public var delegate: MDNotificationViewDelegate?
     
-    
+    /// Create a new notification view by passing an arbitrary `UIView`.
+    ///
+    /// - parameter view:        The view to be shown inside the notification view.
+    /// - parameter position:    The position where the notification should appear. `.top` by default.
     public convenience init(view: UIView, position: MDNotificationViewPosition = .top) {
         var frame = CGRect.zero
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -79,6 +82,9 @@ public class MDNotificationView: UIView {
         self.addSubview(self.view)
     }
     
+    /// Initializes the view with the frame as calulated in the convenience initializer.
+    ///
+    /// - parameter frame:       The frame just above or below the visible area of the screen.
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -91,10 +97,12 @@ public class MDNotificationView: UIView {
         self.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    /// **Loading from storyboards is not supported.**
     required public init?(coder aDecoder: NSCoder) {
         fatalError("MDNotificationView cannot be instantiated from NIB.")
     }
     
+    /// 
     override public func layoutSubviews() {
         super.layoutSubviews()
 
