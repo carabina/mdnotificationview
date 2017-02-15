@@ -41,20 +41,19 @@ class MDNotificationViewTest: XCTestCase {
     func testConvencienceInitOptionalPosition() {
         let notificationView = MDNotificationView(view: UIView())
         
-        XCTAssertEqual(notificationView.frame.origin.y
-            + notificationView.frame.size.height, 0)
+        XCTAssertEqual(notificationView.frame.origin.y + notificationView.frame.size.height, 0)
     }
 
     func testConvencienceInitTopPosition() {
         let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)))
         
-        XCTAssertEqual(notificationView.frame.origin.y + notificationView.frame.size.height, 0)
+        XCTAssertEqual(notificationView.frame.origin.y, -notificationView.frame.size.height)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
         XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIScreen.main.bounds.width)
   
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)))
         
-        XCTAssertEqual(notificationView2.frame.origin.y + notificationView2.frame.size.height, 0)
+        XCTAssertEqual(notificationView2.frame.origin.y, -notificationView2.frame.size.height)
     }
     
     func testConvencienceInitBottomPosition() {

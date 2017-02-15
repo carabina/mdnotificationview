@@ -49,15 +49,11 @@ public class MDNotificationView: UIView {
     
     public convenience init(view: UIView, position: MDNotificationViewPosition = .top) {
         var frame = CGRect.zero
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        print(view.frame)
-
         switch position {
         case .top:
-            let test = view.frame.height + UIApplication.shared.statusBarFrame.height
-            frame = CGRect(x: 0, y: -view.frame.height - UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: test)
-            print(view.frame.height + UIApplication.shared.statusBarFrame.height)
-            print(frame)
+            frame = CGRect(x: 0, y: -view.frame.height - statusBarHeight, width: UIScreen.main.bounds.width, height: view.frame.height + statusBarHeight)
         case .bottom:
             frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: view.frame.height)
         }
@@ -69,7 +65,7 @@ public class MDNotificationView: UIView {
 
         switch position {
         case .top:
-            self.view.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: self.frame.width, height: self.frame.height)
+            self.view.frame = CGRect(x: 0, y: statusBarHeight, width: self.frame.width, height: self.frame.height)
         case .bottom:
             self.view.frame = CGRect(x: 0, y: 0, width: frame.width, height: view.frame.height)
         }
