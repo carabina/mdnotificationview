@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDNotificationExpandedImageLayoutView" customModule="MDNotificationViewDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDNotificationExpandedImageLayoutView" customModule="MDNotificationView" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="vJm-fv-hKp" id="GmI-Ut-W1V"/>
                 <outlet property="textLabel" destination="upP-DY-ufN" id="7GN-MF-6CU"/>
@@ -37,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upP-DY-ufN">
-                    <rect key="frame" x="84" y="49" width="275" height="29"/>
+                    <rect key="frame" x="84" y="51" width="275" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -54,8 +54,8 @@
                 <constraint firstItem="5av-BD-Z7m" firstAttribute="leading" secondItem="vJm-fv-hKp" secondAttribute="trailing" constant="8" id="mUB-ef-iPn"/>
                 <constraint firstItem="5av-BD-Z7m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="qNI-a6-iG7"/>
                 <constraint firstItem="upP-DY-ufN" firstAttribute="trailing" secondItem="5av-BD-Z7m" secondAttribute="trailing" id="rEq-Q8-dcJ"/>
-                <constraint firstItem="upP-DY-ufN" firstAttribute="top" secondItem="5av-BD-Z7m" secondAttribute="bottom" constant="8" symbolic="YES" id="vfY-rb-C4N"/>
-                <constraint firstAttribute="bottom" secondItem="upP-DY-ufN" secondAttribute="bottom" constant="22" id="yyS-Nw-vxU"/>
+                <constraint firstItem="upP-DY-ufN" firstAttribute="top" secondItem="5av-BD-Z7m" secondAttribute="bottom" constant="10" id="vfY-rb-C4N"/>
+                <constraint firstAttribute="bottom" secondItem="upP-DY-ufN" secondAttribute="bottom" constant="20" id="yyS-Nw-vxU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

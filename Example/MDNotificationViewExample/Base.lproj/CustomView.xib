@@ -17,7 +17,7 @@
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FTW-jr-HGu">
                     <rect key="frame" x="16" y="38" width="343" height="2"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading something…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-Hf-R8F">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This download takes approximately 15 seconds…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r9-Hf-R8F">
                     <rect key="frame" x="16" y="9" width="343" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="5yO-Fd-0cZ"/>
@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="FTW-jr-HGu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="34t-jS-ywJ"/>
                 <constraint firstAttribute="trailing" secondItem="8r9-Hf-R8F" secondAttribute="trailing" constant="16" id="AqA-1q-bQ0"/>

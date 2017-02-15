@@ -30,7 +30,6 @@
                     <state key="normal" title="OK"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="F31-qf-DCn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M6i-6B-bkA" secondAttribute="trailing" constant="8" id="1Hw-GV-2PU"/>
                 <constraint firstItem="F31-qf-DCn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3Xn-4H-R6j"/>
