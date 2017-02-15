@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'MDNotificationViewExample' do
+  pod 'MDNotificationView', :path => '../'
+end
+

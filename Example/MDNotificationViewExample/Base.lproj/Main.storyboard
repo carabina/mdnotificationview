@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MDNotificationViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqy-Tv-DvL">
+                                <rect key="frame" x="93" y="271" width="189" height="30"/>
+                                <state key="normal" title="ExpandedImageLayoutView"/>
+                                <connections>
+                                    <action selector="showButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6J3-VF-Zbr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujZ-IL-p5Z">
+                                <rect key="frame" x="116" y="309" width="142" height="30"/>
+                                <state key="normal" title="CompactLayoutView"/>
+                                <connections>
+                                    <action selector="showBottomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRi-Bu-XbT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpy-B6-MhJ">
+                                <rect key="frame" x="135" y="347" width="105" height="30"/>
+                                <state key="normal" title="Custom UIView"/>
+                                <connections>
+                                    <action selector="customButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLw-HG-h9n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-lF-96o">
+                                <rect key="frame" x="94" y="385" width="187" height="30"/>
+                                <state key="normal" title="CompactButtonLayoutView"/>
+                                <connections>
+                                    <action selector="buttonButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcH-XE-uiR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lpy-B6-MhJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="65J-vh-W44"/>
+                            <constraint firstItem="ujZ-IL-p5Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-9" id="95T-wx-Ebc"/>
+                            <constraint firstItem="qqy-Tv-DvL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-47" id="KiA-Ak-XZ5"/>
+                            <constraint firstItem="ujZ-IL-p5Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QOb-Y2-WtH"/>
+                            <constraint firstItem="qqy-Tv-DvL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jOU-t9-Lgu"/>
+                            <constraint firstItem="9bT-lF-96o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="66.5" id="mdo-K6-wyf"/>
+                            <constraint firstItem="9bT-lF-96o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4w-kO-o6t"/>
+                            <constraint firstItem="lpy-B6-MhJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="28.5" id="xc1-Oe-f2b"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="580" y="308.9955022488756"/>
+        </scene>
+    </scenes>
+</document>
