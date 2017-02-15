@@ -102,7 +102,8 @@ public class MDNotificationView: UIView {
         fatalError("MDNotificationView cannot be instantiated from NIB.")
     }
     
-    /// 
+    /// Recalculates the view frame. Will not recalculate the view frame if it is called during an
+    /// animation or if the user is simply panning the view.
     override public func layoutSubviews() {
         super.layoutSubviews()
 
@@ -128,6 +129,8 @@ public class MDNotificationView: UIView {
         }
     }
     
+    /// Slide in the notification view.
+    /// Notify the delegate when the notification view has appeared entirely.
     public func show() {
         if let keyWindow = UIApplication.shared.keyWindow {
             keyWindow.addSubview(self)
@@ -151,6 +154,8 @@ public class MDNotificationView: UIView {
         })
     }
     
+    /// Slide out the notification view.
+    /// Notify the delegate when the notification view has disappeared entirely.
     public func hide() {
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
             self.isShowingAnimation = true
@@ -172,12 +177,19 @@ public class MDNotificationView: UIView {
         })
     }
     
+    /// Start tracking the last y coordinate of the view.
+    /// - parameter touches:        A set of UITouch instances that represent the touches for the starting
+    ///                             phase of the event, which is represented by event.
+    /// - parameter event:          The event to which the touches belong.
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.lastLocationY = frame.origin.y
         self.translationY = 0
     }
-    
-    func handlePan(_ sender: UIPanGestureRecognizer) {
+
+    /// Move the view up or down according to the pan gesture.
+    /// Hide the view if the gesture stops.
+    /// - parameter sender:         The sender of the pan gesture.
+   func handlePan(_ sender: UIPanGestureRecognizer) {
         if .ended == sender.state {
             if 0 < abs(self.translationY) {
                 self.hide()
@@ -201,6 +213,8 @@ public class MDNotificationView: UIView {
         }
     }
     
+    /// Notify the delegate that the user has tapped the notification.
+    /// - parameter sender:         The sender of the tap gesture.
     func handleTap(_ sender: UITapGestureRecognizer) {
         if let delegate = self.delegate {
             delegate.didTap(notificationView: self)
