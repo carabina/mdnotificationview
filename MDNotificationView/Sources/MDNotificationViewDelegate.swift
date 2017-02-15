@@ -31,17 +31,17 @@ public protocol MDNotificationViewDelegate {
     
     /// Will be called when the notification has been tapped by the user.
     ///
-    /// - parameter sender:         The notification that has been tapped.
+    /// - parameter notificationView:   The notification that has been tapped.
     func didTap(notificationView: MDNotificationView)
     
     /// Will be called when the notification view has appeared entirely.
     ///
-    /// - parameter sender:         The notification that has been shown.
+    /// - parameter notificationView:   The notification that has been shown.
     func notificationDidShow(notificationView: MDNotificationView)
     
     /// Will be called when the notification view has disappeared entirely.
     ///
-    /// - parameter sender:         The notification that has been hidden.
+    /// - parameter notificationView:   The notification that has been hidden.
     func notificationDidHide(notificationView: MDNotificationView)
 
 }

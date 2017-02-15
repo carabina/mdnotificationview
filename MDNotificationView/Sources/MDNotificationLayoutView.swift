@@ -25,10 +25,16 @@
 
 import UIKit
 
+/// The wrapper class for the view layouts that ship with MDNotificationView.
+/// **Do not instantiate directly.**
 public class MDNotificationLayoutView : UIView {
     
+    /// The view that will be added as a subview to this view.
     var view: UIView!
 
+    /// Loads the nib with the given name and adds its view as a subview to self.
+    ///
+    /// - parameter named:      The name of the nib file to load.
     func addNib(named nibName: String) {
         let bundle = Bundle(for: type(of: self))
         if let bundleUrl = bundle.url(forResource: "MDNotificationView", withExtension: "bundle"),

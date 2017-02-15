@@ -25,6 +25,7 @@
 
 import UIKit
 
+/// 
 public class MDNotificationCompactButtonLayoutView : MDNotificationLayoutView {
     
     @IBOutlet public weak var textLabel: UILabel!

@@ -25,9 +25,13 @@
 
 import Foundation
 
+/// Lists the possible positions of a notification view.
 public enum MDNotificationViewPosition {
     
+    /// The notification view will appear from the top.
     case top
+
+    /// The notification view will appear from the bottom.
     case bottom
     
 }

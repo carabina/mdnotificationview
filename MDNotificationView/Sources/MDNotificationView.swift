@@ -204,7 +204,6 @@ public class MDNotificationView: UIView {
             switch self.position! {
             case .top:
                 let newY = min(self.lastLocationY + translationY, 0)
-                print(newY)
                 self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
             case .bottom:
                 let newY = max(self.lastLocationY + translationY, UIScreen.main.bounds.size.height - self.view.frame.height)
