@@ -25,16 +25,24 @@
 
 import UIKit
 
+/// A standard layout showing a label.
 public class MDNotificationCompactLayoutView : MDNotificationLayoutView {
         
-    @IBOutlet public weak var textLabel: UILabel!
+    /// The text label that will be shown in the view.
+   @IBOutlet public weak var textLabel: UILabel!
 
+    /// Initializes the view with the default width of the nib.
+    ///
+    /// - parameter frame:      The initial frame of the view.
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: 375, height: 50))
         
         super.addNib(named: "MDNotificationCompactLayoutView")
     }
     
+    /// Initializes the view from the storyboard.
+    ///
+    /// - parameter aDecoder:   The coder to load the XML storyboard.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

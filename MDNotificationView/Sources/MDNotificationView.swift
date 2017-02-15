@@ -41,11 +41,11 @@ public class MDNotificationView: UIView {
     private var isShowingAnimation: Bool = false
     
     /// Indicates if a notification view appears from the top or the bottom of the screen.
-    private var position: MDNotificationViewPosition!
+    private var position: MDNotificationViewPosition = .top
     
     /// The view contained inside the notification view. The position is ajusted when
     /// when shown from the top to prevent it from being by the status bar.
-    var view: UIView!
+    private var view: UIView!
 
     /// The delegate is being notified when the notification has been shown, hidden or tapped.
     public var delegate: MDNotificationViewDelegate?
@@ -62,7 +62,7 @@ public class MDNotificationView: UIView {
         case .top:
             frame = CGRect(x: 0, y: -view.frame.height - statusBarHeight, width: UIScreen.main.bounds.width, height: view.frame.height + statusBarHeight)
         case .bottom:
-            frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: view.frame.height)
+            frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.width, height: view.frame.height)
         }
         
         self.init(frame: frame)
@@ -70,13 +70,7 @@ public class MDNotificationView: UIView {
         self.position = position
         self.view = view
 
-        switch position {
-        case .top:
-            self.view.frame = CGRect(x: 0, y: statusBarHeight, width: self.frame.width, height: self.frame.height)
-        case .bottom:
-            self.view.frame = CGRect(x: 0, y: 0, width: frame.width, height: view.frame.height)
-        }
-        
+        self.view.frame = self.subviewFrame()
         self.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth]
 
         self.addSubview(self.view)
@@ -111,21 +105,9 @@ public class MDNotificationView: UIView {
         if 0 == translationY,
             // Prevent "hiccups" during the show/hide animations.
             !self.isShowingAnimation {
-            switch self.position! {
-            case .top:
-                self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-            case .bottom:
-                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height - self.view.frame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
-            }
+            self.frame = self.shownFrame()
         
-            for subview in self.subviews {
-                switch self.position! {
-                case .top:
-                    subview.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: frame.width, height: view.frame.height)
-                case .bottom:
-                    subview.frame = CGRect(x: 0, y: 0, width: frame.width, height: view.frame.height)
-                }
-            }
+            self.view.frame = self.subviewFrame()
         }
     }
     
@@ -139,12 +121,7 @@ public class MDNotificationView: UIView {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             self.isShowingAnimation = true
             
-            switch self.position! {
-            case .top:
-                self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-            case .bottom:
-                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height - self.view.frame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
-            }
+            self.frame = self.shownFrame()
         }, completion: {(_) in
             self.isShowingAnimation = false
             
@@ -160,12 +137,7 @@ public class MDNotificationView: UIView {
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
             self.isShowingAnimation = true
             
-            switch self.position! {
-            case .top:
-                self.frame = CGRect(x: 0, y: 0 - self.view.frame.height - UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-            case .bottom:
-                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
-            }
+            self.frame = self.hiddenFrame()
         }, completion: { (_) in
             self.isShowingAnimation = false
             
@@ -201,14 +173,16 @@ public class MDNotificationView: UIView {
         else {
             self.translationY = sender.translation(in: superview).y
             
-            switch self.position! {
+            var newY: CGFloat = 0
+            
+            switch self.position {
             case .top:
-                let newY = min(self.lastLocationY + translationY, 0)
-                self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
+                newY = min(self.lastLocationY + translationY, 0)
             case .bottom:
-                let newY = max(self.lastLocationY + translationY, UIScreen.main.bounds.size.height - self.view.frame.height)
-                self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height)
+                newY = max(self.lastLocationY + translationY, UIScreen.main.bounds.size.height - self.view.frame.height)
             }
+
+            self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.viewHeight())
         }
     }
     
@@ -219,5 +193,46 @@ public class MDNotificationView: UIView {
             delegate.didTap(notificationView: self)
         }
     }
+ 
+    /// The height of the notificatin view at the current position and respecting
+    /// the height of the status bar.
+    func viewHeight() -> CGFloat {
+        switch self.position {
+        case .top:
+            return self.view.frame.height + UIApplication.shared.statusBarFrame.height
+        case .bottom:
+            return self.bounds.height
+        }
+    }
     
+    /// The frame rectangle for when the notification view is shown.
+    func shownFrame() -> CGRect {
+        switch self.position {
+        case .top:
+            return CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.viewHeight())
+        case .bottom:
+            return CGRect(x: 0, y: UIScreen.main.bounds.size.height - self.view.frame.height, width: UIScreen.main.bounds.width, height: self.viewHeight())
+        }
+    }
+
+    /// The frame rectangle for when the notification view is hidden.
+   func hiddenFrame() -> CGRect {
+        switch self.position {
+        case .top:
+            return CGRect(x: 0, y: 0 - self.view.frame.height - UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: self.viewHeight())
+        case .bottom:
+            return CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.width, height: self.viewHeight())
+        }
+    }
+    
+    /// The frame rectangle for the subview when the notification view is shown.
+    func subviewFrame() -> CGRect {
+        switch self.position {
+        case .top:
+            return CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: self.frame.width, height: view.frame.height)
+        case .bottom:
+            return CGRect(x: 0, y: 0, width: self.frame.width, height: view.frame.height)
+        }
+    }
+
 }

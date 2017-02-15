@@ -25,12 +25,21 @@
 
 import UIKit
 
+/// A standard layout showing a title, a text and an image.
 public class MDNotificationExpandedImageLayoutView : MDNotificationLayoutView {
 
+    /// The image that will be shown on the left side of the view.
     @IBOutlet public weak var imageView: UIImageView!
+
+    /// The title that will be shown to the right of the image.
     @IBOutlet public weak var titleLabel: UILabel!
+    
+    /// The text that will be shown below the image.
     @IBOutlet public weak var textLabel: UILabel!
     
+    /// Initializes the view with the default width of the nib.
+    ///
+    /// - parameter frame:      The initial frame of the view.
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: 375, height: 100))
 
@@ -38,6 +47,9 @@ public class MDNotificationExpandedImageLayoutView : MDNotificationLayoutView {
         super.addNib(named: "MDNotificationExpandedImageLayoutView")
     }
     
+    /// Initializes the view from the storyboard.
+    ///
+    /// - parameter aDecoder:   The coder to load the XML storyboard.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -45,6 +57,9 @@ public class MDNotificationExpandedImageLayoutView : MDNotificationLayoutView {
         super.addNib(named: "MDNotificationExpandedImageLayoutView")
     }
     
+    /// Redraws the notification within the passed-in rectangle.
+    ///
+    /// - parameter rect:       The rectangle to draw within.
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
         
