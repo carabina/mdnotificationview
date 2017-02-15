@@ -37,7 +37,7 @@ public class MDNotificationView: UIView {
     /// Contains the current y offset to the visible position.
     private var translationY: CGFloat = 0
     
-    /// Used to prevent layouting of subviews during an animation.
+    /// Used to prevent layouting of subviews during an animation or user interaction.
     private var isShowingAnimation: Bool = false
     
     /// Indicates if a notification view appears from the top or the bottom of the screen.
@@ -100,13 +100,12 @@ public class MDNotificationView: UIView {
     /// animation or if the user is simply panning the view.
     override public func layoutSubviews() {
         super.layoutSubviews()
-
-        // Prevent unneccessary redraw if the user is panning the view.
-        if 0 == translationY,
-            // Prevent "hiccups" during the show/hide animations.
-            !self.isShowingAnimation {
-            self.frame = self.shownFrame()
         
+        // Prevent unneccessary redraw if the user is panning the view.
+        // Prevent "hiccups" during the show/hide animations.
+        if (0 == self.translationY) || !self.isShowingAnimation {
+            self.frame = self.shownFrame()
+  
             self.view.frame = self.subviewFrame()
         }
     }
@@ -138,6 +137,13 @@ public class MDNotificationView: UIView {
             self.isShowingAnimation = true
             
             self.frame = self.hiddenFrame()
+            
+            switch self.position {
+            case .top:
+                self.translationY = -self.bounds.height
+            case .bottom:
+                self.translationY = self.bounds.height
+            }
         }, completion: { (_) in
             self.isShowingAnimation = false
             
@@ -154,6 +160,7 @@ public class MDNotificationView: UIView {
     ///                             phase of the event, which is represented by event.
     /// - parameter event:          The event to which the touches belong.
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.isShowingAnimation = true
         self.lastLocationY = frame.origin.y
         self.translationY = 0
     }
@@ -163,6 +170,8 @@ public class MDNotificationView: UIView {
     /// - parameter sender:         The sender of the pan gesture.
    func handlePan(_ sender: UIPanGestureRecognizer) {
         if .ended == sender.state {
+            self.isShowingAnimation = false
+
             if 0 < abs(self.translationY) {
                 self.hide()
             }
