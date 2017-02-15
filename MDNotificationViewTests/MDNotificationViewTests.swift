@@ -48,11 +48,10 @@ class MDNotificationViewTest: XCTestCase {
     func testConvencienceInitTopPosition() {
         let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)))
         
-        XCTAssertEqual(notificationView.frame.origin.y
-            + notificationView.frame.size.height, 0)
+        XCTAssertEqual(notificationView.frame.origin.y + notificationView.frame.size.height, 0)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
-        
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIScreen.main.bounds.width)
+  
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)))
         
         XCTAssertEqual(notificationView2.frame.origin.y + notificationView2.frame.size.height, 0)
@@ -61,13 +60,13 @@ class MDNotificationViewTest: XCTestCase {
     func testConvencienceInitBottomPosition() {
         let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)), position: .bottom)
         
-        XCTAssertEqual(notificationView.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+        XCTAssertEqual(notificationView.frame.origin.y,  UIScreen.main.bounds.height)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width,  UIScreen.main.bounds.width)
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .bottom)
         
-        XCTAssertEqual(notificationView2.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+        XCTAssertEqual(notificationView2.frame.origin.y,  UIScreen.main.bounds.height)
     }
 
     func testShownTopPosition() {
@@ -77,7 +76,7 @@ class MDNotificationViewTest: XCTestCase {
         
         XCTAssertEqual(notificationView.frame.origin.y, 0)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width,  UIScreen.main.bounds.width)
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .top)
         notificationView2.show()
@@ -91,15 +90,15 @@ class MDNotificationViewTest: XCTestCase {
         notificationView.show()
         sleep(1)
         
-        XCTAssertEqual(notificationView.frame.origin.y, UIApplication.shared.keyWindow!.frame.height - notificationView.frame.size.height)
+        XCTAssertEqual(notificationView.frame.origin.y,  UIScreen.main.bounds.height - notificationView.frame.size.height)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width,  UIScreen.main.bounds.width)
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .bottom)
         notificationView2.show()
         sleep(1)
         
-        XCTAssertEqual(notificationView2.frame.origin.y, UIApplication.shared.keyWindow!.frame.height - notificationView2.frame.size.height)
+        XCTAssertEqual(notificationView2.frame.origin.y,  UIScreen.main.bounds.height - notificationView2.frame.size.height)
     }
     
     func testHiddenTopPosition() {
@@ -112,7 +111,7 @@ class MDNotificationViewTest: XCTestCase {
         XCTAssertEqual(notificationView.frame.origin.y
             + notificationView.frame.size.height, 0)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width,  UIScreen.main.bounds.width)
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .top)
         notificationView2.show()
@@ -130,9 +129,9 @@ class MDNotificationViewTest: XCTestCase {
         notificationView.hide()
         sleep(1)
       
-        XCTAssertEqual(notificationView.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+        XCTAssertEqual(notificationView.frame.origin.y,  UIScreen.main.bounds.height)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
-        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width,  UIScreen.main.bounds.width)
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .bottom)
         notificationView2.show()
@@ -140,7 +139,7 @@ class MDNotificationViewTest: XCTestCase {
         notificationView2.hide()
         sleep(1)
     
-        XCTAssertEqual(notificationView2.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+        XCTAssertEqual(notificationView2.frame.origin.y,  UIScreen.main.bounds.height)
     }
     
 }

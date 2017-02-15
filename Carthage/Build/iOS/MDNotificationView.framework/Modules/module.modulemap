@@ -1,0 +1,10 @@
+framework module MDNotificationView {
+  umbrella header "MDNotificationView-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MDNotificationView.Swift {
+    header "MDNotificationView-Swift.h"
+}

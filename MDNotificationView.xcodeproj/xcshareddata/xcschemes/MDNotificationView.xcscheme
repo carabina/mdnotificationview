@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "MDNotificationView_Example.app"
-               BlueprintName = "MDNotificationView_Example"
-               ReferencedContainer = "container:MDNotificationView.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "MDNotificationView_Tests.xctest"
-               BlueprintName = "MDNotificationView_Tests"
+               BlueprintIdentifier = "8E9DB0DA1E545C1D00D35EFE"
+               BuildableName = "MDNotificationView.framework"
+               BlueprintName = "MDNotificationView"
                ReferencedContainer = "container:MDNotificationView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "MDNotificationView_Tests.xctest"
-               BlueprintName = "MDNotificationView_Tests"
+               BlueprintIdentifier = "8E9DB0E31E545C1D00D35EFE"
+               BuildableName = "MDNotificationViewTests.xctest"
+               BlueprintName = "MDNotificationViewTests"
                ReferencedContainer = "container:MDNotificationView.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "MDNotificationView_Example.app"
-            BlueprintName = "MDNotificationView_Example"
+            BlueprintIdentifier = "8E9DB0DA1E545C1D00D35EFE"
+            BuildableName = "MDNotificationView.framework"
+            BlueprintName = "MDNotificationView"
             ReferencedContainer = "container:MDNotificationView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "MDNotificationView_Example.app"
-            BlueprintName = "MDNotificationView_Example"
+            BlueprintIdentifier = "8E9DB0DA1E545C1D00D35EFE"
+            BuildableName = "MDNotificationView.framework"
+            BlueprintName = "MDNotificationView"
             ReferencedContainer = "container:MDNotificationView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -95,16 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "MDNotificationView_Example.app"
-            BlueprintName = "MDNotificationView_Example"
+            BlueprintIdentifier = "8E9DB0DA1E545C1D00D35EFE"
+            BuildableName = "MDNotificationView.framework"
+            BlueprintName = "MDNotificationView"
             ReferencedContainer = "container:MDNotificationView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

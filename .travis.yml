@@ -4,17 +4,21 @@
 
 osx_image: xcode8.2
 language: objective-c
+
 # cache: cocoapods
 # podfile: Example/Podfile
+
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
+
 script:
-# don't use xcpretty until compatibility with codecov is restored
-- set -o pipefail && xcodebuild clean build build-for-testing -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
-- set -o pipefail && xcodebuild test-without-building -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
+- set -o pipefail && xcodebuild clean build test -project MDNotificationView.xcodeproj -scheme MDNotificationView -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
+- set -o pipefail && xcodebuild clean build -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
+#- set -o pipefail && xcodebuild test-without-building -workspace Example/MDNotificationView.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
 
 - pod lib lint
+
 after_success:
 - bash <(curl -s https://codecov.io/bash) -J "MDNotificationView"
 

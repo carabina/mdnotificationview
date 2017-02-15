@@ -12,7 +12,6 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		8E9DB08D1E535F9200D35EFE /* MDNotificationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9DB08C1E535F9200D35EFE /* MDNotificationViewTest.swift */; };
 		8E9DB08F1E54371C00D35EFE /* MDNotificationViewDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9DB08E1E54371C00D35EFE /* MDNotificationViewDelegateTest.swift */; };
 		8E9DB0CF1E544A9100D35EFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		8E9DB0D01E544A9E00D35EFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -45,7 +44,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MDNotificationView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDNotificationView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E9DB08C1E535F9200D35EFE /* MDNotificationViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNotificationViewTest.swift; sourceTree = "<group>"; };
 		8E9DB08E1E54371C00D35EFE /* MDNotificationViewDelegateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNotificationViewDelegateTest.swift; sourceTree = "<group>"; };
 		8E9DB0901E543A7700D35EFE /* MDNotificationView_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDNotificationView_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EC95FBC1E52F483007CD6FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				8E9DB08C1E535F9200D35EFE /* MDNotificationViewTest.swift */,
 				8E9DB08E1E54371C00D35EFE /* MDNotificationViewDelegateTest.swift */,
 			);
 			path = Tests;
@@ -386,7 +383,6 @@
 			files = (
 				8E9DB0D01E544A9E00D35EFE /* AppDelegate.swift in Sources */,
 				8E9DB0CF1E544A9100D35EFE /* ViewController.swift in Sources */,
-				8E9DB08D1E535F9200D35EFE /* MDNotificationViewTest.swift in Sources */,
 				8E9DB08F1E54371C00D35EFE /* MDNotificationViewDelegateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

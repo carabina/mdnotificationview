@@ -50,13 +50,16 @@ public class MDNotificationView: UIView {
     public convenience init(view: UIView, position: MDNotificationViewPosition = .top) {
         var frame = CGRect.zero
         
-        if let keyWindow = UIApplication.shared.keyWindow {
-            switch position {
-            case .top:
-                frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y - view.frame.height - UIApplication.shared.statusBarFrame.height, width: keyWindow.frame.width, height: view.frame.height + UIApplication.shared.statusBarFrame.height)
-            case .bottom:
-                frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.height, width: keyWindow.frame.width, height: view.frame.height)
-            }
+        print(view.frame)
+
+        switch position {
+        case .top:
+            let test = view.frame.height + UIApplication.shared.statusBarFrame.height
+            frame = CGRect(x: 0, y: -view.frame.height - UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: test)
+            print(view.frame.height + UIApplication.shared.statusBarFrame.height)
+            print(frame)
+        case .bottom:
+            frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: view.frame.height)
         }
         
         self.init(frame: frame)
@@ -66,7 +69,7 @@ public class MDNotificationView: UIView {
 
         switch position {
         case .top:
-            self.view.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: frame.width, height: view.frame.height)
+            self.view.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: self.frame.width, height: self.frame.height)
         case .bottom:
             self.view.frame = CGRect(x: 0, y: 0, width: frame.width, height: view.frame.height)
         }
@@ -95,16 +98,15 @@ public class MDNotificationView: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
 
-        if let keyWindow = UIApplication.shared.keyWindow,
-            // Prevent unneccessary redraw if the user is panning the view.
-            0 == translationY,
+        // Prevent unneccessary redraw if the user is panning the view.
+        if 0 == translationY,
             // Prevent "hiccups" during the show/hide animations.
             !self.isShowingAnimation {
             switch self.position! {
             case .top:
-                self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y, width: keyWindow.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
+                self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
             case .bottom:
-                self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.height - self.view.frame.height, width: keyWindow.frame.width, height: self.view.frame.height)
+                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height - self.view.frame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
             }
         
             for subview in self.subviews {
@@ -121,47 +123,45 @@ public class MDNotificationView: UIView {
     public func show() {
         if let keyWindow = UIApplication.shared.keyWindow {
             keyWindow.addSubview(self)
-            
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                self.isShowingAnimation = true
-                
-                switch self.position! {
-                case .top:
-                    self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y, width: keyWindow.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-                case .bottom:
-                    self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.height - self.view.frame.height, width: keyWindow.frame.width, height: self.view.frame.height)
-                }
-            }, completion: {(_) in
-                self.isShowingAnimation = false
-                
-                if let delegate = self.delegate {
-                    delegate.notificationDidShow(notificationView: self)
-                }
-            })
         }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.isShowingAnimation = true
+            
+            switch self.position! {
+            case .top:
+                self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
+            case .bottom:
+                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height - self.view.frame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
+            }
+        }, completion: {(_) in
+            self.isShowingAnimation = false
+            
+            if let delegate = self.delegate {
+                delegate.notificationDidShow(notificationView: self)
+            }
+        })
     }
     
     public func hide() {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
-                self.isShowingAnimation = true
-
-                switch self.position! {
-                case .top:
-                    self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.origin.y - self.view.frame.height - UIApplication.shared.statusBarFrame.height, width: keyWindow.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-                case .bottom:
-                    self.frame = CGRect(x: keyWindow.frame.origin.x, y: keyWindow.frame.height, width: keyWindow.frame.width, height: self.view.frame.height)
-                }
-            }, completion: { (_) in
-                self.isShowingAnimation = false
-
-                self.removeFromSuperview()
- 
-                if let delegate = self.delegate {
-                    delegate.notificationDidShow(notificationView: self)
-                }
-            })
-        }
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
+            self.isShowingAnimation = true
+            
+            switch self.position! {
+            case .top:
+                self.frame = CGRect(x: 0, y: 0 - self.view.frame.height - UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
+            case .bottom:
+                self.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: self.view.frame.height)
+            }
+        }, completion: { (_) in
+            self.isShowingAnimation = false
+            
+            self.removeFromSuperview()
+            
+            if let delegate = self.delegate {
+                delegate.notificationDidShow(notificationView: self)
+            }
+        })
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -170,27 +170,25 @@ public class MDNotificationView: UIView {
     }
     
     func handlePan(_ sender: UIPanGestureRecognizer) {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            if .ended == sender.state {
-                if 0 < abs(self.translationY) {
-                    self.hide()
-                }
-                else {
-                    self.show()
-                }
+        if .ended == sender.state {
+            if 0 < abs(self.translationY) {
+                self.hide()
             }
             else {
-                self.translationY = sender.translation(in: superview).y
-                
-                switch self.position! {
-                case .top:
-                    let newY = min(self.lastLocationY + translationY, 0)
-                    print(newY)
-                    self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
-                case .bottom:
-                    let newY = max(self.lastLocationY + translationY, keyWindow.frame.height - self.view.frame.height)
-                    self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height)
-                }
+                self.show()
+            }
+        }
+        else {
+            self.translationY = sender.translation(in: superview).y
+            
+            switch self.position! {
+            case .top:
+                let newY = min(self.lastLocationY + translationY, 0)
+                print(newY)
+                self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height + UIApplication.shared.statusBarFrame.height)
+            case .bottom:
+                let newY = max(self.lastLocationY + translationY, UIScreen.main.bounds.size.height - self.view.frame.height)
+                self.frame = CGRect(x: self.frame.origin.x, y: newY, width: self.frame.width, height: self.view.frame.height)
             }
         }
     }
