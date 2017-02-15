@@ -30,7 +30,11 @@ import UIKit
 /// of the app.
 public class MDNotificationView: UIView {
     
+    /// Contains the y coordinate of the view during the previous panning callback.
+    /// Used to determine the direction of the panning movement.
     private var lastLocationY: CGFloat = 0
+
+    /// Contains the current y offset to the visible position.
     private var translationY: CGFloat = 0
     private var isShowingAnimation: Bool = false
     
