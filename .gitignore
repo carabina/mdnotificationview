@@ -5,5 +5,7 @@ Example/build/*
 Example/docs/*
 Example/Pods/*
 Example/Podfile.lock
+Carthage/*
 _Pods.xcodeproj
+
 

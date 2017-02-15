@@ -1,9 +1,5 @@
 use_frameworks!
 
-target 'MDNotificationView_Example' do
+target 'MDNotificationViewExample' do
   pod 'MDNotificationView', :path => '../'
-
-  target 'MDNotificationView_Tests' do
-    inherit! :search_paths
-  end
 end
