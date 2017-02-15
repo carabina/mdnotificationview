@@ -38,8 +38,7 @@ class MDNotificationViewTest: XCTestCase {
         
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)))
         
-        XCTAssertEqual(notificationView2.frame.origin.y
-            + notificationView2.frame.size.height, 0)
+        XCTAssertEqual(notificationView2.frame.origin.y + notificationView2.frame.size.height, 0)
     }
     
     func testConvencienceInitBottomPosition() {
@@ -69,12 +68,12 @@ class MDNotificationViewTest: XCTestCase {
         
         XCTAssertEqual(notificationView2.frame.origin.y, 0)
     }
-
+    
     func testShownBottomPosition() {
         let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)), position: .bottom)
         notificationView.show()
         sleep(1)
-      
+        
         XCTAssertEqual(notificationView.frame.origin.y, UIApplication.shared.keyWindow!.frame.height - notificationView.frame.size.height)
         XCTAssertEqual(notificationView.frame.origin.x, 0)
         XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
@@ -82,8 +81,49 @@ class MDNotificationViewTest: XCTestCase {
         let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .bottom)
         notificationView2.show()
         sleep(1)
-  
+        
         XCTAssertEqual(notificationView2.frame.origin.y, UIApplication.shared.keyWindow!.frame.height - notificationView2.frame.size.height)
     }
-
+    
+    func testHiddenTopPosition() {
+        let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)), position: .top)
+        notificationView.show()
+        sleep(1)
+        notificationView.hide()
+        sleep(1)
+        
+        XCTAssertEqual(notificationView.frame.origin.y
+            + notificationView.frame.size.height, 0)
+        XCTAssertEqual(notificationView.frame.origin.x, 0)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        
+        let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .top)
+        notificationView2.show()
+        sleep(1)
+        notificationView2.hide()
+        sleep(1)
+        
+        XCTAssertEqual(notificationView2.frame.origin.y + notificationView2.frame.size.height, 0)
+    }
+    
+    func testHiddenBottomPosition() {
+        let notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)), position: .bottom)
+        notificationView.show()
+        sleep(1)
+        notificationView.hide()
+        sleep(1)
+      
+        XCTAssertEqual(notificationView.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+        XCTAssertEqual(notificationView.frame.origin.x, 0)
+        XCTAssertEqual(notificationView.frame.origin.x + notificationView.frame.size.width, UIApplication.shared.keyWindow!.frame.width)
+        
+        let notificationView2 = MDNotificationView(view: UIView(frame: CGRect(x: 50, y: 50, width: 320, height: 50)), position: .bottom)
+        notificationView2.show()
+        sleep(1)
+        notificationView2.hide()
+        sleep(1)
+    
+        XCTAssertEqual(notificationView2.frame.origin.y, UIApplication.shared.keyWindow!.frame.height)
+    }
+    
 }
