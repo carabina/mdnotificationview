@@ -36,16 +36,20 @@ public class MDNotificationView: UIView {
 
     /// Contains the current y offset to the visible position.
     private var translationY: CGFloat = 0
+    
+    /// Used to prevent layouting of subviews during an animation.
     private var isShowingAnimation: Bool = false
     
+    /// Indicates if a notification view appears from the top or the bottom of the screen.
     private var position: MDNotificationViewPosition!
     
+    /// The view contained inside the notification view. The position is ajusted when
+    /// when shown from the top to prevent it from being by the status bar.
     var view: UIView!
+
+    /// The delegate is being notified when the notification has been shown, hidden or tapped.
     public var delegate: MDNotificationViewDelegate?
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var textLabel: UILabel!
     
     public convenience init(view: UIView, position: MDNotificationViewPosition = .top) {
         var frame = CGRect.zero

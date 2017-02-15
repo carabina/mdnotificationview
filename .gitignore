@@ -4,6 +4,7 @@
 */Podfile.lock
 
 MDNotificationView.xcodeproj/xcuserdata/*
+MDNotificationView.xcodeproj/project.xcworkspace/xcuserdata/*
 Example/MDNotificationViewExample.xcworkspace/xcuserdata/*
 Example/MDNotificationViewExample.xcodeproj/xcuserdata/*
 Example/docs/*
