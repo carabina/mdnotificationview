@@ -16,5 +16,5 @@ script:
 
 - pod lib lint
 after_success:
-- bash <(curl -s https://codecov.io/bash) -J "MDNotificationView_Example"
+- bash <(curl -s https://codecov.io/bash) -J "MDNotificationView"
 
