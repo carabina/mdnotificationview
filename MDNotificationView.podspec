@@ -11,14 +11,8 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'Notification views for iOS apps.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
-MDNotificationView provides customizable views that slide in from the top or the bottom. They may contain a predefined view layout or custom views.
+MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like Material Design Snackbars but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped.
                        DESC
 
   s.homepage         = 'https://github.com/moritzdietsche/mdnotificationview'
@@ -26,7 +20,6 @@ MDNotificationView provides customizable views that slide in from the top or the
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = 'Moritz Dietsche'
   s.source           = { :git => 'https://github.com/moritzdietsche/mdnotificationview.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
 
@@ -36,7 +29,5 @@ MDNotificationView provides customizable views that slide in from the top or the
     'MDNotificationView' => ['MDNotificationView/Assets/*']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
