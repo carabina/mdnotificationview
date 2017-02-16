@@ -7,25 +7,19 @@
 [![Platform](https://img.shields.io/cocoapods/p/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 <!-- [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) -->
 
-MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like [Material Design Snackbars](https://material.io/guidelines/components/snackbars-toasts.html#snackbars-toasts-specs) but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped.
+MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like [Material Design Snackbars](https://material.io/guidelines/components/snackbars-toasts.html#snackbars-toasts-specs) but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped. And of course, it will adjust to the status bar size and to rotation.
 
 ## Screenshots
 
 ![ExpandedImageLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/ExpandedImageLayoutView.png)
-
-The `MDNotificationExpandedImageLayoutView` contains an image, a title and a text. Register your view controller as a `MDNotificationViewDelegate` to be notified if the user taps the view.
-
 ![CompactLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactLayoutView.png)
-
-The `MDNotificationCompactLayoutView` contains a text of up to two lines. Like all layouts, its background and text properties can be customized.
-
 ![CompactButtonLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactButtonLayoutView.png)
-
-The `MDNotificationCompactButtonLayoutView` contains a button and a text. Add a gesture recognizer to the `UIButton` to trigger custom actions.
-
 ![Custom UIView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/Custom%20UIView.png)
 
-Pass a custom `UIView` to the `MDNotificationView` for more flexibility. Register your view controller as a `MDNotificationViewDelegate` to be notified when the view has been shown or hidden. E. g. hide the notification view after the download finishes.
+* The `MDNotificationExpandedImageLayoutView` contains an image, a title and a text. Register your view controller as a `MDNotificationViewDelegate` to be notified if the user taps the view.
+* The `MDNotificationCompactLayoutView` contains a text of up to two lines. Like all layouts, its background and text properties can be customized.
+* The `MDNotificationCompactButtonLayoutView` contains a button and a text. Add a gesture recognizer to the `UIButton` to trigger custom actions.
+* Pass a custom `UIView` to the `MDNotificationView` for more flexibility. Register your view controller as a `MDNotificationViewDelegate` to be notified when the view has been shown or hidden. E. g. hide the notification view after the download finishes.
 
 ## Example
 

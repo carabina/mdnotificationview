@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'Notification views for iOS apps.'
 
   s.description      = <<-DESC
-MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like Material Design Snackbars but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped.
+MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like Material Design Snackbars but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped. And of course, it will adjust to the status bar size and to rotation.
                        DESC
 
   s.homepage         = 'https://github.com/moritzdietsche/mdnotificationview'
