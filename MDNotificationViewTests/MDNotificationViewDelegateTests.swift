@@ -73,7 +73,7 @@ class MDNotificationViewDelegateTests: XCTestCase, MDNotificationViewDelegate {
         self.notificationView?.show()
         self.notificationView?.hide()
         
-        waitForExpectations(timeout: 10.0)
+        waitForExpectations(timeout: 4.0)
     }
     
     // MARK: - Notification View Delegate
