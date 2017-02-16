@@ -52,22 +52,54 @@ class MDNotificationViewDelegateTests: XCTestCase, MDNotificationViewDelegate {
         self.notificationView?.show()
         self.notificationView?.handleTap(UITapGestureRecognizer(target: nil, action: nil))
         
-        waitForExpectations(timeout: 5.0)
+        waitForExpectations(timeout: 2.0)
+    }
+    
+    func testDidShow() {
+        self.expectation = expectation(description: "did show")
+        
+        self.notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)))
+        self.notificationView?.delegate = self
+        self.notificationView?.show()
+        
+        waitForExpectations(timeout: 2.0)
+    }
+    
+    func testDidHide() {
+        self.expectation = expectation(description: "did hide")
+        
+        self.notificationView = MDNotificationView(view: UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50)))
+        self.notificationView?.delegate = self
+        self.notificationView?.show()
+        self.notificationView?.hide()
+        
+        waitForExpectations(timeout: 10.0)
     }
     
     // MARK: - Notification View Delegate
     
     func didTap(notificationView: MDNotificationView) {
-        XCTAssertEqual(self.notificationView, notificationView)
-        self.expectation?.fulfill()
+        if let expectationDescription = self.expectation?.description,
+            "handle tap" == expectationDescription {
+            XCTAssertEqual(self.notificationView, notificationView)
+            self.expectation?.fulfill()
+        }
     }
     
     func notificationDidShow(notificationView: MDNotificationView) {
-        
+        if let expectationDescription = self.expectation?.description,
+            "did show" == expectationDescription {
+            XCTAssertEqual(self.notificationView, notificationView)
+            self.expectation?.fulfill()
+        }
     }
     
     func notificationDidHide(notificationView: MDNotificationView) {
-        
+        if let expectationDescription = self.expectation?.description,
+            "did hide" == expectationDescription {
+            XCTAssertEqual(self.notificationView, notificationView)
+            self.expectation?.fulfill()
+        }
     }
     
 }

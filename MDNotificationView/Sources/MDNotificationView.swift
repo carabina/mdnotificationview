@@ -150,7 +150,7 @@ public class MDNotificationView: UIView {
             self.removeFromSuperview()
             
             if let delegate = self.delegate {
-                delegate.notificationDidShow(notificationView: self)
+                delegate.notificationDidHide(notificationView: self)
             }
         })
     }
