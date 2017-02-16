@@ -14,11 +14,13 @@ MDNotificationView provides a customizable view that slide in from the top or th
 ![ExpandedImageLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/ExpandedImageLayoutView.png)
 ![CompactLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactLayoutView.png)
 ![CompactButtonLayoutView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactButtonLayoutView.png)
-![Custom UIView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/Custom%20UIView.png)
 
 * The `MDNotificationExpandedImageLayoutView` contains an image, a title and a text. Register your view controller as a `MDNotificationViewDelegate` to be notified if the user taps the view.
 * The `MDNotificationCompactLayoutView` contains a text of up to two lines. Like all layouts, its background and text properties can be customized.
 * The `MDNotificationCompactButtonLayoutView` contains a button and a text. Add a gesture recognizer to the `UIButton` to trigger custom actions.
+
+![Custom UIView](https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/Custom%20UIView.png)
+
 * Pass a custom `UIView` to the `MDNotificationView` for more flexibility. Register your view controller as a `MDNotificationViewDelegate` to be notified when the view has been shown or hidden. E. g. hide the notification view after the download finishes.
 
 ## Example
