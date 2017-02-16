@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![License](https://img.shields.io/cocoapods/l/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
 [![Platform](https://img.shields.io/cocoapods/p/MDNotificationView.svg?style=flat)](http://cocoapods.org/pods/MDNotificationView)
-<!-- [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) -->
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 MDNotificationView provides a customizable view that slide in from the top or the bottom. Use MDNotificationViews for in-app notifications (e. g. in a chat app) or to provide feedback to your app's users (e. g. "Settings changes" and an undo button next to it). MDNotificationViews behave mostly like [Material Design Snackbars](https://material.io/guidelines/components/snackbars-toasts.html#snackbars-toasts-specs) but are fully customizable. This means you can select from a few predefined layouts or implement your own UIView. The MDNotificationView propagates livecycle and tap events to its delegate, telling your app when it has been shown, hidden or tapped. And of course, it will adjust to the status bar size and to rotation.
 
@@ -40,11 +40,11 @@ MDNotificationView is available through [CocoaPods](http://cocoapods.org). To in
 pod "MDNotificationView"
 ```
 
-<!-- MDNotificationView is also available through [Carthage](hhttps://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
+MDNotificationView is also available through [Carthage](hhttps://github.com/Carthage/Carthage). To install it, add the following line to your Cartfile:
 
 ```ruby
 github "moritzdietsche/MDNotificationView"
-``` -->
+```
 
 ## Questions & Issues
 
