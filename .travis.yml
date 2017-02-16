@@ -14,9 +14,7 @@ before_install:
 
 script:
 - set -o pipefail && xcodebuild clean build test -project MDNotificationView.xcodeproj -scheme MDNotificationView -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
-- set -o pipefail && xcodebuild clean build -workspace Example/MDNotificationViewExample.xcworkspace -scheme MDNotificationViewExample | xcpretty
-#- set -o pipefail && xcodebuild clean build -workspace Example/MDNotificationViewExample.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
-
+- set -o pipefail && xcodebuild clean build -workspace Example/MDNotificationViewExample.xcworkspace -scheme MDNotificationViewExample -sdk iphonesimulator10.2 ONLY_ACTIVE_ARCH=YES -destination 'OS=10.0,name=iPhone SE' | xcpretty
 
 - pod lib lint
 

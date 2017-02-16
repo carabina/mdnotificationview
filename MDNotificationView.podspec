@@ -22,7 +22,7 @@ MDNotificationView provides customizable views that slide in from the top or the
                        DESC
 
   s.homepage         = 'https://github.com/moritzdietsche/mdnotificationview'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/ExpandedImageLayoutView.png?raw=true', 'https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactLayoutView.png?raw=true', 'https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/CompactButtonLayoutView.png?raw=true', 'https://github.com/moritzdietsche/mdnotificationview/blob/master/Documentation/Custom%20UIView.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = 'Moritz Dietsche'
   s.source           = { :git => 'https://github.com/moritzdietsche/mdnotificationview.git', :tag => s.version.to_s }

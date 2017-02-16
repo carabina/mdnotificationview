@@ -140,5 +140,5 @@ class MDNotificationViewTest: XCTestCase {
     
         XCTAssertEqual(notificationView2.frame.origin.y,  UIScreen.main.bounds.height)
     }
-    
+
 }
