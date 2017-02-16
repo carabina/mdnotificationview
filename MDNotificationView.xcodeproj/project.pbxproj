@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E6B59641E558CDC00140447 /* MDNotificationViewDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B59631E558CDC00140447 /* MDNotificationViewDelegateTests.swift */; };
 		8E9DB0E51E545C1D00D35EFE /* MDNotificationView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9DB0DB1E545C1D00D35EFE /* MDNotificationView.framework */; };
 		8E9DB0EC1E545C1D00D35EFE /* MDNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E9DB0DE1E545C1D00D35EFE /* MDNotificationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E9DB0FA1E545CD300D35EFE /* MDNotificationCompactButtonLayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9DB0F71E545CD300D35EFE /* MDNotificationCompactButtonLayoutView.xib */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E6B59631E558CDC00140447 /* MDNotificationViewDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDNotificationViewDelegateTests.swift; sourceTree = "<group>"; };
 		8E9DB0DB1E545C1D00D35EFE /* MDNotificationView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDNotificationView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9DB0DE1E545C1D00D35EFE /* MDNotificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDNotificationView.h; sourceTree = "<group>"; };
 		8E9DB0DF1E545C1D00D35EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8E9DB10D1E545DE600D35EFE /* MDNotificationViewTests.swift */,
+				8E6B59631E558CDC00140447 /* MDNotificationViewDelegateTests.swift */,
 				8E9DB0EB1E545C1D00D35EFE /* Info.plist */,
 			);
 			path = MDNotificationViewTests;
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E9DB10E1E545DE600D35EFE /* MDNotificationViewTests.swift in Sources */,
+				8E6B59641E558CDC00140447 /* MDNotificationViewDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
